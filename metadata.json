@@ -1,0 +1,6 @@
+{
+  "name": "Raita Mitra Social Trust",
+  "description": "Crowdfunding and empowerment platform for farmers, women SHGs, and rural communities in Karnataka.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
