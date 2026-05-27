@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useDonations } from '@/lib/donation-context';
 import { LEGAL_COMPLIANCE, FOCUS_AREAS } from '@/lib/data';
 import { 
@@ -13,18 +14,30 @@ export default function AboutPage() {
   const { openModal } = useDonations();
 
   return (
-    <div className="flex-grow bg-slate-50 font-sans pb-16">
+    <div className="flex-grow bg-[#fbfcfa] font-sans pb-16">
       
       {/* 1. Header Hero Page Banner */}
-      <section className="bg-gradient-to-b from-emerald-50/70 via-slate-50 to-slate-50 py-12 border-b border-slate-100">
-        <div className="max-w-4xl mx-auto px-4 text-center space-y-3">
-          <span className="text-[10px] font-mono tracking-widest font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full uppercase">
+      <section className="relative overflow-hidden bg-slate-900 py-16 border-b border-slate-100 text-center">
+        {/* Background Image with dark elegant overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://picsum.photos/seed/karnataka-rural-agriculture/1920/400"
+            alt="About Banner"
+            fill
+            className="object-cover opacity-25"
+            referrerPolicy="no-referrer"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 to-slate-900/90" />
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 space-y-3">
+          <span className="text-[10px] font-mono tracking-widest font-bold text-emerald-300 bg-emerald-950/50 border border-emerald-800/40 px-3 py-1 rounded-full uppercase inline-block">
             Raita Mitra Social Trust (R)
           </span>
-          <h1 className="text-3xl sm:text-4xl font-serif font-black tracking-tight text-slate-900 leading-none">
+          <h1 className="text-3xl sm:text-4xl font-serif font-black tracking-tight text-white leading-none">
             About Our Mission & Vision
           </h1>
-          <p className="text-sm text-slate-500 max-w-xl mx-auto leading-relaxed">
+          <p className="text-sm text-slate-350 max-w-xl mx-auto leading-relaxed text-slate-300">
             Registered Public Charitable Trust since 2021. Formulated to uplift farming communities and foster self-reliant rural districts across Karnataka.
           </p>
         </div>
@@ -42,7 +55,7 @@ export default function AboutPage() {
             className="bg-white p-6 sm:p-8 rounded-2xl border border-slate-100 shadow-sm space-y-4"
           >
             <h2 className="text-xl font-bold text-slate-900 tracking-tight pb-2 border-b border-slate-50 flex items-center gap-2">
-              <Building className="h-5 w-5 text-emerald-600" />
+              <Building className="h-5 w-5 text-emerald-800" />
               Our Background & Origin
             </h2>
             <p className="text-sm text-slate-650 leading-relaxed text-justify">
@@ -57,19 +70,19 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             
             {/* Vision */}
-            <div className="bg-gradient-to-br from-emerald-600 to-green-600 p-6 rounded-2xl text-white shadow-md space-y-3">
+            <div className="bg-gradient-to-br from-emerald-800 to-emerald-950 p-6 rounded-2xl text-white shadow-md space-y-3">
               <Compass className="h-8 w-8 text-amber-300" />
               <h3 className="text-lg font-extrabold tracking-tight font-serif">
                 Our Vision
               </h3>
-              <p className="text-xs text-emerald-55 font-mono">SELF-RELIANCE & DIGNITY</p>
-              <p className="text-sm leading-relaxed text-emerald-55 text-justify">
+              <p className="text-xs text-white/50 font-mono">SELF-RELIANCE & DIGNITY</p>
+              <p className="text-sm leading-relaxed text-slate-105 text-slate-205 text-slate-100 text-justify">
                 To build self-reliant rural communities by empowering farmers, enhancing livelihoods, and enabling equal access to education, healthcare, and opportunities.
               </p>
             </div>
 
             {/* Mission */}
-            <div className="bg-gradient-to-br from-amber-500 to-orange-600 p-6 rounded-2xl text-white shadow-md space-y-3">
+            <div className="bg-gradient-to-br from-amber-600 to-orange-700 p-6 rounded-2xl text-white shadow-md space-y-3">
               <Compass className="h-8 w-8 text-amber-200" />
               <h3 className="text-lg font-extrabold tracking-tight font-serif">
                 Our Mission
@@ -84,40 +97,40 @@ export default function AboutPage() {
           {/* Why Support Us */}
           <section className="bg-white p-6 sm:p-8 rounded-2xl border border-slate-100 shadow-sm space-y-4">
             <h2 className="text-xl font-bold text-slate-900 tracking-tight pb-2 border-b border-slate-50 flex items-center gap-2">
-              <Award className="h-5 w-5 text-emerald-600" />
+              <Award className="h-5 w-5 text-emerald-800" />
               Why Support Us?
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="p-3 bg-slate-50 rounded-xl space-y-1">
+              <div className="p-3 bg-slate-50/70 rounded-xl space-y-1">
                 <span className="text-xs font-bold text-slate-800 flex items-center gap-1.5">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-emerald-800 shrink-0" />
                   Government Compliant
                 </span>
                 <p className="text-xs text-slate-500 leading-relaxed">
                   Fully registered trust. Recognized on NGO Darpan and MCA CSR corporate portals.
                 </p>
               </div>
-              <div className="p-3 bg-slate-50 rounded-xl space-y-1">
+              <div className="p-3 bg-slate-50/70 rounded-xl space-y-1">
                 <span className="text-xs font-bold text-slate-800 flex items-center gap-1.5">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-emerald-800 shrink-0" />
                   Transparent Governance
                 </span>
                 <p className="text-xs text-slate-500 leading-relaxed">
                   Rigorous audits. Clear double-ledger transparency for every crowdfunding donation.
                 </p>
               </div>
-              <div className="p-3 bg-slate-50 rounded-xl space-y-1">
+              <div className="p-3 bg-slate-50/70 rounded-xl space-y-1">
                 <span className="text-xs font-bold text-slate-800 flex items-center gap-1.5">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-emerald-800 shrink-0" />
                   Grassroots Connection
                 </span>
                 <p className="text-xs text-slate-500 leading-relaxed">
                   Real impacts on ground. Deploys testing kits, seeds, and computer equipment directly.
                 </p>
               </div>
-              <div className="p-3 bg-slate-50 rounded-xl space-y-1">
+              <div className="p-3 bg-slate-50/70 rounded-xl space-y-1">
                 <span className="text-xs font-bold text-slate-800 flex items-center gap-1.5">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-emerald-800 shrink-0" />
                   Sustainability Priority
                 </span>
                 <p className="text-xs text-slate-500 leading-relaxed">
@@ -186,7 +199,7 @@ export default function AboutPage() {
             </div>
             <button
               onClick={() => openModal()}
-              className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 rounded-xl text-xs transition-all shadow-sm"
+              className="w-full bg-emerald-800 hover:bg-emerald-900 text-white font-bold py-2.5 rounded-xl text-xs transition-all shadow-sm cursor-pointer"
             >
               Simulate Instant Donation
             </button>

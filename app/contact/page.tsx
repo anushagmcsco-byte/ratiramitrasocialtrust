@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { CONTACT_INFO, LEGAL_COMPLIANCE } from '@/lib/data';
 import { 
   Mail, Phone, MapPin, Landmark, Clock, Send, CheckCircle2, AlertCircle, MessageSquare
@@ -37,18 +38,30 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="flex-grow bg-slate-50 font-sans pb-16">
+    <div className="flex-grow bg-[#fbfcfa] font-sans pb-16">
       
       {/* Page Banner */}
-      <section className="bg-gradient-to-b from-emerald-50/70 via-slate-50 to-slate-50 py-12 border-b border-slate-100">
-        <div className="max-w-4xl mx-auto px-4 text-center space-y-3">
-          <span className="text-[10px] font-mono tracking-widest font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full uppercase">
+      <section className="relative overflow-hidden bg-slate-900 py-16 border-b border-slate-100 text-center">
+        {/* Background Image with dark elegant overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://picsum.photos/seed/karnataka-trust-office/1920/400"
+            alt="Contact Office Banner"
+            fill
+            className="object-cover opacity-25"
+            referrerPolicy="no-referrer"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 to-slate-900/90" />
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 space-y-3">
+          <span className="text-[10px] font-mono tracking-widest font-bold text-emerald-300 bg-emerald-950/50 border border-emerald-800/40 px-3 py-1 rounded-full uppercase inline-block">
             Official Touchpoint
           </span>
-          <h1 className="text-3xl sm:text-4xl font-serif font-black tracking-tight text-slate-900 leading-none">
+          <h1 className="text-3xl sm:text-4xl font-serif font-black tracking-tight text-white leading-none">
             Get in Touch With Trustees
           </h1>
-          <p className="text-sm text-slate-500 max-w-xl mx-auto leading-relaxed">
+          <p className="text-sm text-slate-300 max-w-xl mx-auto leading-relaxed">
             Have questions about CSR eligibility, 80G tax exemptions, or site evaluations? Write to us or call our Hubballi registered office directly.
           </p>
         </div>
@@ -95,7 +108,7 @@ export default function ContactPage() {
                         placeholder="e.g. Anand Gowda"
                         value={name}
                         onChange={e => setName(e.target.value)}
-                        className="w-full bg-slate-50 border border-slate-200 focus:bg-white text-sm outline-none px-4 py-2.5 rounded-lg focus:border-emerald-500 transition-all text-slate-800"
+                        className="w-full bg-slate-50 border border-slate-200 focus:bg-white text-sm outline-none px-4 py-2.5 rounded-lg focus:border-emerald-800 transition-all text-slate-800"
                         required
                       />
                     </div>
@@ -108,7 +121,7 @@ export default function ContactPage() {
                         placeholder="e.g. anand@example.com"
                         value={email}
                         onChange={e => setEmail(e.target.value)}
-                        className="w-full bg-slate-50 border border-slate-200 focus:bg-white text-sm outline-none px-4 py-2.5 rounded-lg focus:border-emerald-500 transition-all text-slate-800"
+                        className="w-full bg-slate-50 border border-slate-200 focus:bg-white text-sm outline-none px-4 py-2.5 rounded-lg focus:border-emerald-800 transition-all text-slate-800"
                         required
                       />
                     </div>
@@ -123,7 +136,7 @@ export default function ContactPage() {
                       placeholder="e.g. 80G Tax Invoice inquiry / CSR Audit"
                       value={subject}
                       onChange={e => setSubject(e.target.value)}
-                      className="w-full bg-slate-50 border border-slate-200 focus:bg-white text-sm outline-none px-4 py-2.5 rounded-lg focus:border-emerald-500 transition-all text-slate-800"
+                      className="w-full bg-slate-50 border border-slate-200 focus:bg-white text-sm outline-none px-4 py-2.5 rounded-lg focus:border-emerald-800 transition-all text-slate-800"
                     />
                   </div>
 
@@ -136,7 +149,7 @@ export default function ContactPage() {
                       placeholder="Detail your question here..."
                       value={message}
                       onChange={e => setMessage(e.target.value)}
-                      className="w-full bg-slate-50 border border-slate-200 focus:bg-white text-sm outline-none px-4 py-2.5 rounded-lg focus:border-emerald-500 transition-all text-slate-800 text-justify"
+                      className="w-full bg-slate-50 border border-slate-200 focus:bg-white text-sm outline-none px-4 py-2.5 rounded-lg focus:border-emerald-800 transition-all text-slate-800 text-justify"
                       required
                     ></textarea>
                   </div>
@@ -144,7 +157,7 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 text-white font-extrabold w-full py-3 rounded-lg text-xs tracking-wide shadow-md flex items-center justify-center gap-1.5 transition-all select-none"
+                    className="bg-emerald-800 hover:bg-emerald-900 disabled:opacity-50 text-white font-bold w-full py-3 rounded-lg text-xs tracking-wide shadow-md flex items-center justify-center gap-1.5 transition-all select-none cursor-pointer"
                   >
                     {loading ? "Transmitting..." : (
                       <>

@@ -38,9 +38,9 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 
   if (!camp) {
     return (
-      <div className="flex-grow flex flex-col items-center justify-center py-20 bg-slate-50">
+      <div className="flex-grow flex flex-col items-center justify-center py-20 bg-[#fbfcfa]">
         <h2 className="text-xl font-bold text-slate-800">Campaign Not Found</h2>
-        <Link href="/services" className="mt-4 text-sm font-semibold text-emerald-600 hover:underline">
+        <Link href="/services" className="mt-4 text-sm font-semibold text-emerald-900 hover:underline">
           Return to Focus Areas
         </Link>
       </div>
@@ -50,13 +50,13 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
   const IconComponent = ICON_MAP[camp.icon] || Sprout;
 
   return (
-    <div className="flex-grow bg-slate-50 font-sans pb-16">
+    <div className="flex-grow bg-[#fbfcfa] font-sans pb-16">
       {/* 1. Breadcrumb bar */}
-      <div className="bg-slate-100 border-b border-slate-200/50 py-3.5 px-4 sm:px-6 lg:px-8">
+      <div className="bg-[#fbfcfa]/80 backdrop-blur-sm border-b border-slate-100 py-3.5 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex items-center gap-1.5 text-xs text-slate-500 font-medium">
-          <Link href="/" className="hover:text-emerald-700 transition-colors">Home</Link>
+          <Link href="/" className="hover:text-emerald-900 hover:font-bold transition-colors">Home</Link>
           <ChevronRight className="h-3 w-3" />
-          <Link href="/services" className="hover:text-emerald-700 transition-colors">Focus Areas</Link>
+          <Link href="/services" className="hover:text-emerald-900 hover:font-bold transition-colors">Focus Areas</Link>
           <ChevronRight className="h-3 w-3" />
           <span className="text-slate-800 truncate max-w-[200px] sm:max-w-none">{camp.shortTitle}</span>
         </div>
@@ -89,13 +89,13 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           {/* Core Initiatives List */}
           <section className="bg-white p-6 sm:p-8 rounded-2xl border border-slate-100 shadow-sm space-y-4">
             <h2 className="text-lg font-bold text-slate-900 pb-2 border-b border-slate-50 flex items-center gap-2">
-              <CheckCircle2 className="h-5 w-5 text-emerald-600" />
+              <CheckCircle2 className="h-5 w-5 text-emerald-800" />
               Core Objectives & Frameworks
             </h2>
             <ul className="grid grid-cols-1 gap-3.5">
               {camp.bullets.map((bullet, idx) => (
-                <li key={idx} className="bg-slate-50 border border-slate-100 p-4 rounded-xl flex items-start gap-3">
-                  <div className="h-6 w-6 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-mono text-xs font-bold shrink-0 mt-0.5">
+                <li key={idx} className="bg-slate-50/50 border border-slate-100 p-4 rounded-xl flex items-start gap-3">
+                  <div className="h-6 w-6 rounded-full bg-emerald-50 border border-emerald-100/50 text-emerald-900 flex items-center justify-center font-mono text-xs font-bold shrink-0 mt-0.5">
                     {idx + 1}
                   </div>
                   <p className="text-sm text-slate-700 leading-relaxed font-sans">{bullet}</p>
@@ -107,7 +107,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           {/* Sub-projects status tracking table */}
           <section className="bg-white p-6 sm:p-8 rounded-2xl border border-slate-100 shadow-sm space-y-5">
             <h2 className="text-lg font-bold text-slate-900 pb-1 flex items-center gap-2">
-              <Activity className="h-5 w-5 text-emerald-600 animate-pulse" />
+              <Activity className="h-5 w-5 text-emerald-800 animate-pulse" />
               Direct Action Sub-Projects
             </h2>
             <p className="text-xs text-slate-400 font-sans mt-0.5">
@@ -123,8 +123,8 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                   </div>
                   <span className={`text-[10px] font-mono font-bold px-2.5 py-1 rounded-full uppercase shrink-0 ${
                     proj.status === 'active' 
-                      ? 'bg-emerald-100 text-emerald-850 border border-emerald-200' 
-                      : 'bg-blue-100 text-blue-800 border border-blue-200'
+                      ? 'bg-emerald-50 text-emerald-900 border border-emerald-100' 
+                      : 'bg-blue-50 text-blue-900 border border-blue-100'
                   }`}>
                     {proj.status === 'active' ? '● Active Camp' : '✓ Completed'}
                   </span>
@@ -159,7 +159,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 
           <Link
             href="/services"
-            className="flex items-center justify-center gap-1.5 font-bold text-xs text-slate-500 hover:text-slate-850 py-2 border border-slate-200/50 hover:bg-white rounded-xl transition-all"
+            className="flex items-center justify-center gap-1.5 font-bold text-xs text-slate-500 hover:text-slate-950 py-2 border border-slate-205 border-slate-200 hover:border-slate-300 hover:bg-white rounded-xl transition-all cursor-pointer"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to Services List

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, JetBrains_Mono } from 'next/font/google';
+import { Inter, JetBrains_Mono, Lora } from 'next/font/google';
 import './globals.css';
 import { DonationProvider } from '@/lib/donation-context';
 import Header from '@/components/header';
@@ -17,6 +17,11 @@ const jetbrainsMono = JetBrains_Mono({
   variable: '--font-mono',
 });
 
+const lora = Lora({
+  subsets: ['latin'],
+  variable: '--font-serif',
+});
+
 export const metadata: Metadata = {
   title: 'Raita Mitra Social Trust (R) - Farmer & Rural Empowerment NGO',
   description: 'Register charitable crowdfunding and empowerment platform for farmers, women SHGs, and youth across Karnataka. Approved under 80G tax exemption.',
@@ -24,8 +29,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} scroll-smooth`}>
-      <body className="font-sans antialiased text-slate-800 bg-slate-50 min-h-screen flex flex-col" suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} ${lora.variable} scroll-smooth`}>
+      <body className="font-sans antialiased text-slate-800 bg-[#fbfcfa] min-h-screen flex flex-col" suppressHydrationWarning>
         <DonationProvider>
           <Header />
           <main className="flex-grow flex flex-col">

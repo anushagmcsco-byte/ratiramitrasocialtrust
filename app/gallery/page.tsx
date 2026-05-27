@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { GALLERY_ITEMS, FOCUS_AREAS } from '@/lib/data';
 import { Camera, Calendar, Tag, X, ChevronRight, Eye } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -20,18 +21,30 @@ export default function GalleryPage() {
     : GALLERY_ITEMS.filter(item => item.category === activeFilter);
 
   return (
-    <div className="flex-grow bg-slate-50 font-sans pb-16">
+    <div className="flex-grow bg-[#fbfcfa] font-sans pb-16">
       
       {/* Page Banner */}
-      <section className="bg-gradient-to-b from-emerald-50/70 via-slate-50 to-slate-50 py-12 border-b border-slate-100">
-        <div className="max-w-4xl mx-auto px-4 text-center space-y-3">
-          <span className="text-[10px] font-mono tracking-widest font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full uppercase">
+      <section className="relative overflow-hidden bg-slate-900 py-16 border-b border-slate-100 text-center">
+        {/* Background Image with dark elegant overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://picsum.photos/seed/karnataka-rural-activities/1920/400"
+            alt="Activities Gallery Banner"
+            fill
+            className="object-cover opacity-25"
+            referrerPolicy="no-referrer"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 to-slate-900/90" />
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 space-y-3">
+          <span className="text-[10px] font-mono tracking-widest font-bold text-emerald-300 bg-emerald-950/50 border border-emerald-800/40 px-3 py-1 rounded-full uppercase inline-block">
             Grassroots Proof
           </span>
-          <h1 className="text-3xl sm:text-4xl font-serif font-black tracking-tight text-slate-900 leading-none">
+          <h1 className="text-3xl sm:text-4xl font-serif font-black tracking-tight text-white leading-none">
             Camp Activities Gallery
           </h1>
-          <p className="text-sm text-slate-500 max-w-xl mx-auto leading-relaxed">
+          <p className="text-sm text-slate-300 max-w-xl mx-auto leading-relaxed">
             Real snapshots from active programs in Hubballi, Dharwad, Haveri, and Koppal districts. We document progress for transparency.
           </p>
         </div>
@@ -44,10 +57,10 @@ export default function GalleryPage() {
             <button
               key={f.value}
               onClick={() => setActiveFilter(f.value)}
-              className={`text-xs font-bold px-3.5 py-2 rounded-xl border transition-all ${
+              className={`text-xs font-bold px-3.5 py-2 rounded-xl border transition-all cursor-pointer ${
                 activeFilter === f.value
-                  ? 'bg-emerald-600 border-emerald-600 text-white shadow-sm'
-                  : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-50'
+                  ? 'bg-emerald-800 border-emerald-800 text-white shadow-sm'
+                  : 'bg-white border-slate-200 text-slate-600 hover:bg-emerald-50 hover:text-emerald-950 hover:border-emerald-250'
               }`}
             >
               {f.label}
@@ -106,7 +119,7 @@ export default function GalleryPage() {
                     {/* Metadata Card Info */}
                     <div className="p-5 flex-grow space-y-2.5 flex flex-col justify-between">
                       <div className="space-y-1.5">
-                        <h3 className="font-extrabold text-sm text-slate-900 leading-snug group-hover:text-emerald-700 transition-colors line-clamp-1">
+                        <h3 className="font-extrabold text-sm text-slate-900 leading-snug group-hover:text-emerald-900 transition-colors line-clamp-1">
                           {item.title}
                         </h3>
                         <p className="text-xs text-slate-500 leading-relaxed text-justify line-clamp-2">

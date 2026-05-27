@@ -40,37 +40,43 @@ export default function Footer() {
         {/* Col 2: Fast Navigation links */}
         <div className="md:col-span-3 space-y-4">
           <h4 className="text-sm font-bold text-white uppercase tracking-wider border-b border-white/10 pb-2">
-            Camp Services
+            Explore Mitra
           </h4>
           <ul className="space-y-2.5 text-sm font-semibold">
             <li>
-              <Link href="/services#sustainable-agriculture" className="hover:text-emerald-400 hover:pl-1 transition-all flex items-center gap-1.5">
+              <Link href="/services" className="hover:text-emerald-400 hover:pl-1 transition-all flex items-center gap-1.5">
                 <span className="h-1 w-1 rounded-full bg-emerald-500"></span>
-                Farmer Empowerment
+                Focus Programs
               </Link>
             </li>
             <li>
-              <Link href="/services#women-empowerment" className="hover:text-emerald-400 hover:pl-1 transition-all flex items-center gap-1.5">
+              <Link href="/gallery" className="hover:text-emerald-400 hover:pl-1 transition-all flex items-center gap-1.5">
                 <span className="h-1 w-1 rounded-full bg-emerald-500"></span>
-                Women Cooperatives
+                Media Gallery
               </Link>
             </li>
             <li>
-              <Link href="/services#digital-skills" className="hover:text-emerald-400 hover:pl-1 transition-all flex items-center gap-1.5">
+              <Link href="/blog" className="hover:text-emerald-400 hover:pl-1 transition-all flex items-center gap-1.5">
                 <span className="h-1 w-1 rounded-full bg-emerald-500"></span>
-                Digital & AI Literacy
+                Blog & News Stories
               </Link>
             </li>
             <li>
-              <Link href="/services#health-wellbeing" className="hover:text-emerald-400 hover:pl-1 transition-all flex items-center gap-1.5">
+              <Link href="/admin" className="hover:text-emerald-400 hover:pl-1 transition-all flex items-center gap-1.5">
                 <span className="h-1 w-1 rounded-full bg-emerald-500"></span>
-                Community Health Camps
+                Trust Admin Panel
               </Link>
             </li>
             <li>
-              <Link href="/services#climate-action" className="hover:text-emerald-400 hover:pl-1 transition-all flex items-center gap-1.5">
+              <Link href="/about" className="hover:text-emerald-400 hover:pl-1 transition-all flex items-center gap-1.5">
                 <span className="h-1 w-1 rounded-full bg-emerald-500"></span>
-                Eco Livelihoods
+                About Trustees
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="hover:text-emerald-400 hover:pl-1 transition-all flex items-center gap-1.5">
+                <span className="h-1 w-1 rounded-full bg-emerald-500"></span>
+                Contact Us
               </Link>
             </li>
           </ul>

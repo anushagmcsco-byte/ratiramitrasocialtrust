@@ -51,7 +51,7 @@ export default function ServicesClient() {
 
               {/* Body description */}
               <div className="p-5 space-y-4">
-                <p className="text-xs sm:text-sm text-slate-505 text-justify leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 text-justify leading-relaxed">
                   {camp.description}
                 </p>
 
@@ -61,7 +61,7 @@ export default function ServicesClient() {
                   <ul className="space-y-1.5">
                     {camp.bullets.map((bullet, bIdx) => (
                       <li key={bIdx} className="text-xs text-slate-650 flex items-start gap-1.5 leading-relaxed">
-                        <span className="text-emerald-600 font-bold shrink-0 mt-0.5">•</span>
+                        <span className="text-emerald-800 font-bold shrink-0 mt-0.5">•</span>
                         <span className="text-slate-600 font-sans">{bullet}</span>
                       </li>
                     ))}
@@ -69,9 +69,9 @@ export default function ServicesClient() {
                 </div>
 
                 {/* Impact Focus block */}
-                <div className="p-3 bg-emerald-500/5 border border-emerald-600/10 rounded-xl space-y-1">
-                  <span className="text-[9px] font-mono font-bold text-emerald-800 tracking-wider block uppercase">Impact Focus:</span>
-                  <p className="text-xs leading-relaxed text-slate-705 italic font-serif">
+                <div className="p-3 bg-emerald-50 border border-emerald-100/70 rounded-xl space-y-1">
+                  <span className="text-[9px] font-mono font-bold text-emerald-900 tracking-wider block uppercase">Impact Focus:</span>
+                  <p className="text-xs leading-relaxed text-slate-700 italic font-serif">
                     &quot;{camp.impactFocus}&quot;
                   </p>
                 </div>
@@ -83,12 +83,12 @@ export default function ServicesClient() {
               <div className="space-y-2">
                 <div className="flex justify-between items-baseline text-xs font-mono font-medium">
                   <span className="text-slate-500 font-bold">Raised: ₹{(camp.raisedAmount).toLocaleString('en-IN')}</span>
-                  <span className="text-emerald-700 font-bold">{currentFundPct}% Funded</span>
+                  <span className="text-emerald-900 font-bold">{currentFundPct}% Funded</span>
                 </div>
 
                 <div className="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
                   <div 
-                    className="h-full bg-gradient-to-r from-emerald-500 to-green-600"
+                    className="h-full bg-gradient-to-r from-emerald-800 to-emerald-950"
                     style={{ width: `${currentFundPct}%` }}
                   ></div>
                 </div>
@@ -103,13 +103,13 @@ export default function ServicesClient() {
               <div className="grid grid-cols-2 gap-2">
                 <Link
                   href={`/services/${camp.id}`}
-                  className="border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold py-2.5 rounded-xl text-center tracking-wide transition-all shadow-xs"
+                  className="border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold py-2.5 rounded-xl text-center tracking-wide transition-all shadow-xs cursor-pointer"
                 >
                   Detailed Blueprint
                 </Link>
                 <button
                   onClick={() => openModal(camp.id)}
-                  className="bg-emerald-600 hover:bg-emerald-700 hover:shadow-md text-white text-xs font-bold py-2.5 rounded-xl text-center tracking-wide transition-all shadow-xs"
+                  className="bg-emerald-800 hover:bg-emerald-900 hover:shadow-md text-white text-xs font-bold py-2.5 rounded-xl text-center tracking-wide transition-all shadow-xs cursor-pointer"
                 >
                   Sponsor Camp
                 </button>
